@@ -1,12 +1,86 @@
-[gd_scene load_steps=2 format=3 uid="uid://ci5q3vmuimsfr"]
+[gd_scene load_steps=9 format=3 uid="uid://ci5q3vmuimsfr"]
 
 [ext_resource type="Script" path="res://UI/Pause_Menu.gd" id="1"]
+[ext_resource type="FontFile" uid="uid://d0jnkdnmsnpmq" path="res://Assets/LeagueGothic-Regular.otf" id="1_pvol6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ko55t"]
+bg_color = Color(0.615686, 0.596078, 0.584314, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.760784, 0.760784, 0.760784, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ta23"]
+bg_color = Color(0.729412, 0.129412, 0.278431, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 0.470588, 0.556863, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mihra"]
+bg_color = Color(0.729412, 0.129412, 0.278431, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 0.470588, 0.556863, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8d0n4"]
+bg_color = Color(0.729412, 0.129412, 0.278431, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 0.470588, 0.556863, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nhaud"]
+bg_color = Color(0.729412, 0.129412, 0.278431, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 0.470588, 0.556863, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="Theme" id="Theme_ra8m6"]
+default_font_size = 22
+Button/fonts/font = ExtResource("1_pvol6")
+Button/styles/disabled = SubResource("StyleBoxFlat_ko55t")
+Button/styles/focus = SubResource("StyleBoxFlat_5ta23")
+Button/styles/hover = SubResource("StyleBoxFlat_mihra")
+Button/styles/normal = SubResource("StyleBoxFlat_8d0n4")
+Button/styles/pressed = SubResource("StyleBoxFlat_nhaud")
+Label/fonts/font = ExtResource("1_pvol6")
 
 [node name="Pause_Menu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_ra8m6")
 script = ExtResource("1")
 
 [node name="ColorRect" type="ColorRect" parent="."]

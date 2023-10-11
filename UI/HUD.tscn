@@ -1,6 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://do7pdpjxteg8e"]
+[gd_scene load_steps=4 format=3 uid="uid://do7pdpjxteg8e"]
 
 [ext_resource type="Script" path="res://UI/HUD.gd" id="1"]
+[ext_resource type="Shader" path="res://Effects/HUD.gdshader" id="2_1wevu"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_owgnc"]
+shader = ExtResource("2_1wevu")
+shader_parameter/fireMovement = Vector2(-0.01, -0.5)
+shader_parameter/distortionMovement = Vector2(-0.01, -0.3)
+shader_parameter/normalStrength = 40.0
+shader_parameter/distortionStrength = 0.1
 
 [node name="HUD" type="Control"]
 layout_mode = 3
@@ -43,6 +51,8 @@ horizontal_alignment = 2
 vertical_alignment = 1
 
 [node name="Fever" type="ProgressBar" parent="."]
+material = SubResource("ShaderMaterial_owgnc")
+use_parent_material = true
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5

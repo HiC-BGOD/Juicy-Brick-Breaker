@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dr50duubwf50c"]
+[gd_scene load_steps=6 format=3 uid="uid://dr50duubwf50c"]
 
 [ext_resource type="Script" path="res://Ball/Ball.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://dlw0ttql2yjq5" path="res://Ball/ball_red_small_alt.png" id="2_mm6kv"]
+[ext_resource type="Texture2D" uid="uid://cewqpd6bxko58" path="res://Ball/ball_blue_small_alt.png" id="3_rel8o"]
 
 [sub_resource type="PhysicsMaterial" id="2"]
 friction = 0.0
@@ -15,14 +17,20 @@ physics_material_override = SubResource("2")
 gravity_scale = 0.0
 script = ExtResource("1")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -10.0
-offset_top = -10.0
-offset_right = 10.0
-offset_bottom = 10.0
-color = Color(0.501961, 1, 1, 1)
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("1")
+
+[node name="Images" type="Node2D" parent="."]
+
+[node name="Highlight" type="Sprite2D" parent="Images"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(2.38419e-07, 1.19209e-07)
+scale = Vector2(0.300781, 0.304688)
+texture = ExtResource("3_rel8o")
+
+[node name="Sprite2D" type="Sprite2D" parent="Images"]
+position = Vector2(0, 1.13687e-13)
+scale = Vector2(0.453125, 0.46875)
+texture = ExtResource("2_mm6kv")
 
 [connection signal="body_entered" from="." to="." method="_on_Ball_body_entered"]
